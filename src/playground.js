@@ -1,6 +1,17 @@
-const fruits = ["Apple", "Banana", "Peach"];
-const veggies = ["Tomatoe", "Cucumber"];
+const developer = {
+  name: "Osmani Diaz",
+  salary: 50000,
+  experience: 4.5,
+  techStack: ["Vue", "HTML", "CSS"],
+  isLookingForWork: true,
+  seniority() {
+    if (this.experience < 1) {
+      console.log("Experience Level is Junior");
+    } else {
+      console.log("Experience Level is Senior");
+    }
+  },
+};
 
-const combo = [...fruits, veggies[1]];
-
-console.log(combo);
+console.log(developer);
+developer.seniority();
