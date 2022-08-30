@@ -1,17 +1,9 @@
-const developer = {
-  name: "Osmani Diaz",
-  salary: 50000,
-  experience: 4.5,
-  techStack: ["Vue", "HTML", "CSS"],
-  isLookingForWork: true,
-  seniority() {
-    if (this.experience < 1) {
-      console.log("Experience Level is Junior");
-    } else {
-      console.log("Experience Level is Senior");
-    }
-  },
+export const evenOrOdd = (number) => {
+  if (number % 2 == 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
 };
 
-console.log(developer);
-developer.seniority();
+export const multiply = (num1, num2) => num1 * num2;
