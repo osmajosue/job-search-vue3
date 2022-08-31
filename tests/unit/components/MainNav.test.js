@@ -16,7 +16,7 @@ describe("MainNav", () => {
       "Teams",
       "Locations",
       "Life at Diaz Careers",
-      "How We Hire",
+      "How we Hire",
       "Students",
       "Jobs",
     ];
@@ -26,5 +26,41 @@ describe("MainNav", () => {
       return menuItem.text();
     });
     expect(navMenuItemsText).toEqual(expectedNavItems);
+  });
+
+  describe("When user is logged out", () => {
+    it("prompts user to sign in", () => {
+      const wrapper = mount(MainNav, {
+        data() {
+          return {
+            isLoggedIn: false,
+          };
+        },
+      });
+
+      const loginButton = wrapper.find("[data-test='login-btn']");
+      const profileImage = wrapper.find("[data-test='profile-img']");
+
+      expect(loginButton.exists()).toBe(true);
+      expect(profileImage.exists()).toBe(false);
+    });
+  });
+
+  describe("When user is logged in", () => {
+    it("shows the profile image", () => {
+      const wrapper = mount(MainNav, {
+        data() {
+          return {
+            isLoggedIn: true,
+          };
+        },
+      });
+
+      const loginButton = wrapper.find("[data-test='login-btn']");
+      const profileImage = wrapper.find("[data-test='profile-img']");
+
+      expect(loginButton.exists()).toBe(false);
+      expect(profileImage.exists()).toBe(true);
+    });
   });
 });
