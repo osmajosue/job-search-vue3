@@ -24,7 +24,8 @@
         </nav>
 
         <div class="flex items-center h-full ml-auto">
-          <action-button />
+          <profile-image v-if="isLoggedIn" />
+          <action-button v-else />
         </div>
       </div>
     </div>
@@ -33,11 +34,13 @@
 
 <script>
 import ActionButton from "@/components/ActionButton.vue";
+import ProfileImage from "@/components/ProfileImage.vue";
 
 export default {
   name: "MainNav",
   components: {
     ActionButton,
+    ProfileImage,
   },
   data() {
     return {
@@ -47,10 +50,11 @@ export default {
         "Teams",
         "Locations",
         "Life at Diaz Careers",
-        "How We Hire",
+        "How we Hire",
         "Students",
         "Jobs",
       ],
+      isLoggedIn: false,
     };
   },
 };
