@@ -1,7 +1,6 @@
 <template>
   <img
     :src="imgUrl"
-    alt=""
     class="w-9 h-9 object-contain rounded-3xl cursor-pointer"
   />
 </template>

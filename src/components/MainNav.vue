@@ -28,6 +28,7 @@
           <action-button
             v-else
             text="Sign in"
+            type="secondary"
             data-test="login-btn"
             @click="loginUser"
           />

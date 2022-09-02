@@ -1,5 +1,5 @@
 <template>
-  <button class="primary" @click="clickHandler">
+  <button :class="buttonClass">
     {{ text }}
   </button>
 </template>
@@ -12,6 +12,18 @@ export default {
       type: String,
       default: "Sign in",
       required: true,
+    },
+    type: {
+      type: String,
+      default: "primary",
+    },
+  },
+  computed: {
+    buttonClass() {
+      return {
+        primary: this.type === "primary",
+        secondary: this.type === "secondary",
+      };
     },
   },
 };
@@ -27,5 +39,6 @@ button {
 }
 
 .secondary {
+  @apply bg-transparent text-brand-blue-1 hover:bg-brand-blue-2 hover:text-white;
 }
 </style>
