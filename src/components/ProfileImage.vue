@@ -11,8 +11,7 @@ export default {
   name: "ProfileImage",
   data() {
     return {
-      imgUrl:
-        "https://www.pngitem.com/pimgs/m/487-4876417_link-head-png-toon-link-face-png-transparent.png",
+      imgUrl: "https://www.freeiconspng.com/uploads/pikachu-png-icon-8.png",
     };
   },
 };
