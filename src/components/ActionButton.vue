@@ -1,5 +1,5 @@
 <template>
-  <button :class="buttonClass">
+  <button :class="buttonClass" data-test="action-button">
     {{ text }}
   </button>
 </template>
@@ -10,12 +10,15 @@ export default {
   props: {
     text: {
       type: String,
-      default: "Sign in",
       required: true,
     },
     type: {
       type: String,
+      required: false,
       default: "primary",
+      validator(value) {
+        return ["primary", "secondary"].includes(value);
+      },
     },
   },
   computed: {
