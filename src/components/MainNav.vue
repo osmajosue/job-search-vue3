@@ -34,6 +34,8 @@
           />
         </div>
       </div>
+
+      <subnav v-if="isLoggedIn" />
     </div>
   </header>
 </template>
@@ -41,25 +43,20 @@
 <script>
 import ActionButton from "@/components/ActionButton.vue";
 import ProfileImage from "@/components/ProfileImage.vue";
+import Subnav from "@/components/Subnav.vue";
 
 export default {
   name: "MainNav",
   components: {
     ActionButton,
     ProfileImage,
+    Subnav,
   },
   data() {
     return {
       company: "Diaz Careers",
       url: "https://careers.google.com",
-      menuItems: [
-        "Teams",
-        "Locations",
-        "Life at Diaz Careers",
-        "How we Hire",
-        "Students",
-        "Jobs",
-      ],
+      menuItems: ["Teams", "Locations", "How we Hire", "Students", "Jobs"],
       isLoggedIn: false,
     };
   },

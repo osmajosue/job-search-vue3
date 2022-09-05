@@ -15,7 +15,6 @@ describe("MainNav", () => {
     const expectedNavItems = [
       "Teams",
       "Locations",
-      "Life at Diaz Careers",
       "How we Hire",
       "Students",
       "Jobs",
@@ -38,7 +37,13 @@ describe("MainNav", () => {
 
   describe("When user is logged in", () => {
     it("shows the profile image", async () => {
-      const wrapper = mount(MainNav);
+      const wrapper = mount(MainNav, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
+      });
 
       let profileImage = wrapper.find("[data-test='profile-img']");
       let loginButton = wrapper.find("[data-test='login-btn']");
