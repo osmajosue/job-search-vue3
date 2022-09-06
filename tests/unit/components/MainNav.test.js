@@ -1,9 +1,9 @@
-import { mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import MainNav from "@/components/MainNav.vue";
 
 describe("MainNav", () => {
   it("Display company name", () => {
-    const wrapper = mount(MainNav);
+    const wrapper = shallowMount(MainNav);
     // await wrapper.setData({
     //   company: "Job Page",
     // });
@@ -11,7 +11,7 @@ describe("MainNav", () => {
   });
 
   it("Displays menu items for navigation", () => {
-    const wrapper = mount(MainNav);
+    const wrapper = shallowMount(MainNav);
     const expectedNavItems = [
       "Teams",
       "Locations",
@@ -29,7 +29,7 @@ describe("MainNav", () => {
 
   describe("When user is logged out", () => {
     it("prompts user to sign in", () => {
-      const wrapper = mount(MainNav);
+      const wrapper = shallowMount(MainNav);
       const loginButton = wrapper.find("[data-test='login-btn']");
       expect(loginButton.exists()).toBe(true);
     });
@@ -37,13 +37,7 @@ describe("MainNav", () => {
 
   describe("When user is logged in", () => {
     it("shows the profile image", async () => {
-      const wrapper = mount(MainNav, {
-        global: {
-          stubs: {
-            FontAwesomeIcon: true,
-          },
-        },
-      });
+      const wrapper = shallowMount(MainNav);
 
       let profileImage = wrapper.find("[data-test='profile-img']");
       let loginButton = wrapper.find("[data-test='login-btn']");
@@ -58,6 +52,19 @@ describe("MainNav", () => {
 
       profileImage = wrapper.find("[data-test='profile-img']");
       expect(profileImage.exists()).toBe(true);
+    });
+
+    it("Renders subnav", async () => {
+      const wrapper = shallowMount(MainNav);
+
+      let subnav = wrapper.find("[data-test='subnav']");
+      expect(subnav.exists()).toBe(false);
+
+      let loginButton = wrapper.find("[data-test='login-btn']");
+      await loginButton.trigger("click");
+
+      subnav = wrapper.find("[data-test='subnav']");
+      expect(subnav.exists()).toBe(true);
     });
   });
 });

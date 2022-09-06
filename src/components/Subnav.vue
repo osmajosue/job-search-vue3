@@ -20,8 +20,12 @@
 
       <nav class="h-full">
         <ul class="h-full flex justify-end items-center">
-          <li class="mr-9">Saved Jobs</li>
-          <li>Job Alerts</li>
+          <li class="mr-9">
+            <a href="#">Saved Jobs</a>
+          </li>
+          <li>
+            <a href="#">Job Alerts</a>
+          </li>
         </ul>
       </nav>
     </div>
