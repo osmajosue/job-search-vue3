@@ -1,5 +1,8 @@
 <template>
-  <h1>{{ verb }} for everyone</h1>
+  <h1>
+    <span :class="verbClass">{{ verb }}</span> <br />
+    for everyone
+  </h1>
   <h2>Find your next Job at Diaz Careers</h2>
 </template>
 
@@ -11,6 +14,13 @@ export default {
       verb: "Code",
       interval: null,
     };
+  },
+  computed: {
+    verbClass() {
+      return {
+        [this.verb]: true,
+      };
+    },
   },
   created() {
     this.changeTitle();
@@ -31,3 +41,21 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.Build {
+  color: #1a73e8;
+}
+
+.Create {
+  color: #34a853;
+}
+
+.Code {
+  color: #d93025;
+}
+
+.Design {
+  color: #f9ab00;
+}
+</style>
