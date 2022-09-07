@@ -1,17 +1,22 @@
 <template>
-  <h1>
-    <span :class="verbClass">{{ verb }}</span> <br />
+  <h1 class="text-8xl font-bold tracking-tighter mb-14" data-test="action-verb">
+    <span :class="verbClass">{{ verb }}</span>
+    <br />
     for everyone
   </h1>
-  <h2>Find your next Job at Diaz Careers</h2>
+  <h2 class="text-3xl font-normal tracking-tighter">
+    Find your next Job at Diaz Careers
+  </h2>
 </template>
 
 <script>
+import { findNextItem } from "@/helpers/nextElementInArray.js";
+
 export default {
   name: "Headline",
   data() {
     return {
-      verb: "Code",
+      verb: "Build",
       interval: null,
     };
   },
@@ -31,12 +36,9 @@ export default {
   methods: {
     changeTitle() {
       this.interval = setInterval(() => {
-        const verbs = ["Build", "Code", "Design", "Create"];
-        const currentVerbIndex = verbs.indexOf(this.verb);
-        const nextVerbIndex = (currentVerbIndex + 1) % 4;
-        const nextVerb = verbs[nextVerbIndex];
-        this.verb = nextVerb;
-      }, 5000);
+        const verbs = ["Build", "Create", "Design", "Code"];
+        this.verb = findNextItem(verbs, this.verb);
+      }, 3000);
     },
   },
 };
