@@ -5,7 +5,7 @@
     for everyone
   </h1>
   <h2 class="text-3xl font-normal tracking-tighter">
-    Find your next Job at Diaz Careers
+    Find your next Job at Diaz Careers.
   </h2>
 </template>
 
@@ -59,5 +59,8 @@ export default {
 
 .Design {
   color: #f9ab00;
+}
+
+.isActive {
 }
 </style>
