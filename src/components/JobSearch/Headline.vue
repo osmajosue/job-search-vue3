@@ -43,7 +43,7 @@ export default {
       this.interval = setInterval(() => {
         const verbs = ["Build", "Create", "Design", "Code"];
         this.verb = findNextItem(verbs, this.verb);
-      }, 5000);
+      }, 3000);
     },
   },
 };
