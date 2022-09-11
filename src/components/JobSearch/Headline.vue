@@ -1,12 +1,17 @@
 <template>
-  <h1 class="text-8xl font-bold tracking-tighter mb-14" data-test="action-verb">
-    <span :class="verbClass">{{ verb }}</span>
-    <br />
-    for everyone
-  </h1>
-  <h2 class="text-3xl font-normal tracking-tighter">
-    Find your next Job at Diaz Careers.
-  </h2>
+  <section class="mb-[60px]">
+    <h1
+      class="text-8xl font-bold tracking-tighter mb-14"
+      data-test="action-verb"
+    >
+      <span :class="verbClass">{{ verb }}</span>
+      <br />
+      for everyone
+    </h1>
+    <h2 class="text-3xl font-normal tracking-tighter">
+      Find your next Job at Diaz Careers.
+    </h2>
+  </section>
 </template>
 
 <script>
@@ -38,7 +43,7 @@ export default {
       this.interval = setInterval(() => {
         const verbs = ["Build", "Create", "Design", "Code"];
         this.verb = findNextItem(verbs, this.verb);
-      }, 3000);
+      }, 5000);
     },
   },
 };

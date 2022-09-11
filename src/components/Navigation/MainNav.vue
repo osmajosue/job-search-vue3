@@ -18,7 +18,7 @@
             >
               <a
                 href=""
-                class="flex items-center h-full py-2.5 text-brand-gray-2 hover:text-black"
+                class="flex items-center h-full py-2.5 text-brand-gray-4 hover:text-black"
                 >{{ menuItem }}</a
               >
             </li>
@@ -43,9 +43,9 @@
 </template>
 
 <script>
-import ActionButton from "@/components/ActionButton.vue";
-import ProfileImage from "@/components/ProfileImage.vue";
-import Subnav from "@/components/Subnav.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
+import ProfileImage from "@/components/Navigation/ProfileImage.vue";
+import Subnav from "@/components/Navigation/Subnav.vue";
 
 export default {
   name: "MainNav",

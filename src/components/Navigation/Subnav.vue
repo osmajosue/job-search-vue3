@@ -20,10 +20,10 @@
 
       <nav class="h-full">
         <ul class="h-full flex justify-end items-center">
-          <li class="mr-9 text-brand-gray-2 hover:text-black">
+          <li class="mr-9 text-brand-gray-4 hover:text-black">
             <a href="#">Saved Jobs</a>
           </li>
-          <li class="text-brand-gray-2 hover:text-black">
+          <li class="text-brand-gray-4 hover:text-black">
             <a href="#">Job Alerts</a>
           </li>
         </ul>
