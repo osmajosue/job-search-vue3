@@ -41,7 +41,7 @@ export default {
   methods: {
     changeTitle() {
       this.interval = setInterval(() => {
-        const verbs = ["Build", "Create", "Design", "Code"];
+        const verbs = ["Build", "Create", "Code", "Design"];
         this.verb = findNextItem(verbs, this.verb);
       }, 3000);
     },

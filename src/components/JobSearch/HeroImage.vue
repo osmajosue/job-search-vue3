@@ -23,10 +23,10 @@ export default {
     changeImage() {
       this.interval = setInterval(() => {
         const imgNames = [
-          "pikachu-transparent.png",
-          "bulbasaur-transparent.png",
           "squirtle-transparent.png",
+          "bulbasaur-transparent.png",
           "charizard-transparent.png",
+          "pikachu-transparent.png",
         ];
         this.imgName = findNextItem(imgNames, this.imgName);
         this.imgUrl = require(`@/assets/img/${this.imgName}`);

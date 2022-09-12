@@ -8,11 +8,9 @@
     <div class="flex flex-nowrap flex-1 h-full text-base font-light">
       <div class="relative flex items-center flex-1 h-full pr-3">
         <label for="" class="absolute left-0 -top-10 font-medium">Role</label>
-        <input
-          v-model="role"
-          type="text"
+        <text-input
           placeholder="Software Engineer"
-          class="w-full text-lg font-normal focus:outline-none"
+          @input-handler="updateRole"
         />
       </div>
       <span
@@ -21,11 +19,9 @@
       >
       <div class="relative flex flex-1 flex-nowrap h-full pl-3">
         <label for="" class="absolute left-3 -top-10 font-medium">Where?</label>
-        <input
-          v-model="location"
-          type="text"
-          placeholder="Los Angeles"
-          class="w-full text-lg font-normal focus:outline-none"
+        <text-input
+          placeholder="San Francisco"
+          @input-handler="updateLocation"
         />
       </div>
     </div>
@@ -39,10 +35,12 @@
 
 <script>
 import ActionButton from "@/components/Shared/ActionButton.vue";
+import TextInput from "@/components/Shared/TextInput.vue";
 export default {
   name: "JobSearchForm",
   components: {
     ActionButton,
+    TextInput,
   },
   data() {
     return {
@@ -50,13 +48,13 @@ export default {
       location: "",
     };
   },
-  // methods: {
-  //   updateRole($event) {
-  //     this.role = $event.target.value;
-  //   },
-  //     updateLocation($event) {
-  //     this.location = $event.target.value;
-  //   },
-  // },
+  methods: {
+    updateRole(payload) {
+      this.role = payload;
+    },
+    updateLocation(payload) {
+      this.location = payload;
+    },
+  },
 };
 </script>
