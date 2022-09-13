@@ -4,9 +4,9 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
-        <a :href="url" class="flex items-center h-full text-xl">{{
+        <router-link to="/" class="flex items-center h-full text-xl">{{
           company
-        }}</a>
+        }}</router-link>
 
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
@@ -57,7 +57,6 @@ export default {
   data() {
     return {
       company: "Diaz Careers",
-      url: "https://careers.google.com",
       menuItems: ["Teams", "Locations", "How we Hire", "Students", "Jobs"],
       isLoggedIn: false,
     };

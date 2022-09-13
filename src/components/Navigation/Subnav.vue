@@ -4,7 +4,7 @@
   >
     <div class="flex h-full justify-between">
       <div
-        v-if="onJobsResultsPage"
+        v-if="onJobResultsPage"
         data-test="job-count"
         class="flex h-full items-center"
       >
@@ -35,10 +35,17 @@
 <script>
 export default {
   name: "Subnav",
-  data() {
-    return {
-      onJobsResultsPage: true,
-    };
+  // data() {
+  //   return {
+  //     onJobResultsPage: true,
+  //   };
+  // },
+  props: {
+    onJobResultsPage: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
 };
 </script>
